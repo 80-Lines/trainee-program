@@ -1,10 +1,10 @@
 # TextArea
 
-| property    | description                                                                   | type         |
-| ----------- | ----------------------------------------------------------------------------- | ------------ |
-| value       | The value of the textarea                                                     | **string**   |
-| onChange    | Callback when the value changes                                               | **function** |
-| placeholder | Specifies a short hint that describes the expected value of an textarea field | **string**   |
+| property    | description                                                                   | type         | default       | required  |
+| ----------- | ----------------------------------------------------------------------------- | ------------ | ------------- | --------- |
+| value       | The value of the textarea                                                     | **string**   | **undefined** | **false** |
+| onChange    | Callback when the value changes                                               | **function** | **undefined** | **false** |
+| placeholder | Specifies a short hint that describes the expected value of an textarea field | **string**   | **undefined** | **false** |
 
 ### Usage
 

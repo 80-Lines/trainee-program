@@ -1,8 +1,8 @@
 # Separator
 
-| property | description                                   | type                                     |
-| -------- | --------------------------------------------- | ---------------------------------------- |
-| size     | Sets the size of the space (width and height) | **"xs" \| "sm" \| "md" \| "lg" \| "xl"** |
+| property | description                                   | type                                     | default  | required  |
+| -------- | --------------------------------------------- | ---------------------------------------- | -------- | --------- |
+| size     | Sets the size of the space (width and height) | **"xs" \| "sm" \| "md" \| "lg" \| "xl"** | **"md"** | **false** |
 
 ### Usage
 

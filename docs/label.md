@@ -1,9 +1,9 @@
 # Separator
 
-| property | description                                 | type          |
-| -------- | ------------------------------------------- | ------------- |
-| children | The content to be displayed                 | **ReactNode** |
-| htmlFor  | The id of the element the label is bound to | **string**    |
+| property | description                                 | type       | default       | required |
+| -------- | ------------------------------------------- | ---------- | ------------- | -------- |
+| children | The content to be displayed                 | **string** | **undefined** | **true** |
+| htmlFor  | The id of the element the label is bound to | **string** | **undefined** | **true** |
 
 ### Usage
 

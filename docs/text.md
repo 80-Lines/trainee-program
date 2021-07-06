@@ -1,11 +1,11 @@
 # Text
 
-| property   | description                                                   | type                                                                                                            |
-| ---------- | ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| children   | The content to be displayed                                   | **ReactNode**                                                                                                   |
-| size       | The size of the text                                          | **"xs" \| "sm" \| "md" \| "lg" \| "xl"**                                                                        |
-| color      | The color of the text                                         | **string**                                                                                                      |
-| fontWeight | Sets how thick or thin characters in text should be displayed | **"thin" \| "extralight" \| "light" \| "normal" \| "medium" \| "semibold" \| "bold" \| "extrabold" \| "black"** |
+| property   | description                                                   | type                                                                                                            | default       | required  |
+| ---------- | ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------- | --------- |
+| children   | The content to be displayed                                   | **ReactNode**                                                                                                   | **-**         | **true**  |
+| size       | The size of the text                                          | **"xs" \| "sm" \| "md" \| "lg" \| "xl"**                                                                        | **md**        | **false** |
+| color      | The color of the text                                         | **string**                                                                                                      | **undefined** | **false** |
+| fontWeight | Sets how thick or thin characters in text should be displayed | **"thin" \| "extralight" \| "light" \| "normal" \| "medium" \| "semibold" \| "bold" \| "extrabold" \| "black"** | **normal**    | **false** |
 
 ### Usage
 

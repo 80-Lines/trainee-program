@@ -1,10 +1,10 @@
 # Text
 
-| property       | description                                     | type          |
-| -------------- | ----------------------------------------------- | ------------- |
-| children       | The content to be displayed                     | **ReactNode** |
-| visible        | Controls the modal visibility                   | **boolean**   |
-| onRequestClose | Callback called when the modal should disappear | **function**  |
+| property       | description                                     | type          | default | required |
+| -------------- | ----------------------------------------------- | ------------- | ------- | -------- |
+| children       | The content to be displayed                     | **ReactNode** | **-**   | **true** |
+| visible        | Controls the modal visibility                   | **boolean**   | **-**   | **true** |
+| onRequestClose | Callback called when the modal should disappear | **function**  | **-**   | **true** |
 
 ### Usage
 
