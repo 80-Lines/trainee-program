@@ -1,4 +1,4 @@
-# Text
+# Modal
 
 | property       | description                                     | type          | default | required |
 | -------------- | ----------------------------------------------- | ------------- | ------- | -------- |
@@ -14,7 +14,7 @@ You may need to check the [Button API](./button.md) and [Text API](./text.md)
 const [isVisible, setIsVisible] = React.useState(false);
 
 <>
-  <Button onClicl={() => setIsVisible(true)}>Open modal</Button>
+  <Button onClick={() => setIsVisible(true)}>Open modal</Button>
 
   <Modal visible={isVisible} onRequestClose={() => setIsVisible(false)}>
     <Text>
