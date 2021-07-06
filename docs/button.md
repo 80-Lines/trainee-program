@@ -2,13 +2,13 @@
 
 | property | description                                    | type                                     | default       | required  |
 | -------- | ---------------------------------------------- | ---------------------------------------- | ------------- | --------- |
-| children | Sets the button style                          | **ReactNode**                            | **-**         | **true**  |
-| variant  | Sets the button style                          | **"solid" \| "outline" \| "ghost"**      | **"solid"**   | **false** |
-| size     | Sets the size of the button (width and height) | **"xs" \| "sm" \| "md" \| "lg" \| "xl"** | **"md"**      | **false** |
+| children | The content to be displayed                    | **ReactNode**                            | **-**         | **true**  |
+| variant  | Sets the style of button                       | **"solid" \| "outline" \| "ghost"**      | **"solid"**   | **false** |
+| size     | Sets the size of  button (width and height)    | **"xs" \| "sm" \| "md" \| "lg" \| "xl"** | **"md"**      | **false** |
 | intent   | Sets the background color of the button        | **"primary" \| "secondary"**             | **"primary"** | **false** |
 | pending  | Set the loading status of button               | **boolean**                              | **false**     | **false** |
 | disabled | Disabled state of button                       | **boolean**                              | **false**     | **false** |
-| onClick  | Callbacl when the button is clicked            | **function**                             | **undefined** | **false** |
+| onClick  | Callback when the button is clicked            | **function**                             | **undefined** | **false** |
 
 ### Usage
 
