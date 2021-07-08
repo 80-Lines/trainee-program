@@ -1,16 +1,25 @@
 import React from "react";
 import Button from "./components/button";
 import Input from "./components/input";
-import Separator from "./components/separator";
 import Modal from "./components/modal";
+import Select from "./components/select";
+import Separator from "./components/separator";
 
 function App() {
   const [name, setName] = React.useState("");
   const [visible, setVisible] = React.useState(false);
+  const [selectedBrand, setSelectedBrand] = React.useState(2);
+
+  //TODO: Get db.json brands
+  const brands = [{ id: 1, name: "Citroen" }, { id: 2, name: "Volkswagen" }];
+  const options = brands.map(brand => ({
+    value: brand.id,
+    label: brand.name,
+  }));
 
   return (
     <Container>
-      <Button onClick={() => {}}>Button</Button>
+      <Button disabled onClick={() => { }}>Button</Button>
       <Separator />
       <Input
         id="name"
@@ -21,6 +30,8 @@ function App() {
       />
       <Separator />
       <Button
+        intent="primary"
+        variant="outline"
         onClick={() => {
           setVisible(true);
         }}
@@ -37,6 +48,8 @@ function App() {
         anim excepteur. Voluptate et sit ex do aliqua irure adipisicing dolor
         culpa ea do est. Laboris dolore magna minim incididunt aute.
       </Modal>
+      <Separator />
+      <Select value={selectedBrand} options={options} onChange={setSelectedBrand} />
     </Container>
   );
 }
