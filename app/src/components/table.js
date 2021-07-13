@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "./button";
 
 const Table = ({ data, columns, rowKey }) => {
   return (
     <table border={1} style={{ border: 1 }}>
       <tr>
         {columns.map((column) => (
-          <th key={column.path} style={{ padding: 10 }}>
+          <th key={column.path} style={{ padding: 10, width: column.width }}>
             {column.label}
           </th>
         ))}
@@ -44,6 +43,7 @@ Table.propTypes = {
       path: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       render: PropTypes.func,
+      width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     })
   ),
   rowKey: PropTypes.string,

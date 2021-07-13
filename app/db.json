@@ -1,10 +1,25 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
-   
+  "brands": [
+    {
+      "name": "BMW",
+      "id": 1
+    },
+    {
+      "name": "Audi",
+      "id": 2
+    },
+    {
+      "name": "Porsche",
+      "id": 3
+    },
+    {
+      "name": "Ferrari",
+      "id": 4
+    },
+    {
+      "name": "Tesla",
+      "id": 5
+    }
+  ],
+  "cars": []
+}
