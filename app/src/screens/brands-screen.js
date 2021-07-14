@@ -3,21 +3,44 @@ import Table from "../components/table";
 import Separator from "../components/separator";
 import Button from "../components/button";
 import Container from "../components/container";
+import Modal from "../components/modal";
+import { Link } from "react-router-dom";
+import DeleteConfirmationModal from "../components/delete-confirmation-modal";
 
 const BrandsScreen = () => {
   const [brands, setBrands] = React.useState([]);
+  const [deletingBrand, setDeletingBrand] = React.useState();
 
-  React.useEffect(() => {
+  const getBrands = () => {
     fetch("http://localhost:8000/brands").then((result) => {
       result.json().then((data) => {
         setBrands(data);
       });
     });
+  };
+
+  React.useEffect(() => {
+    getBrands();
   }, []);
+
+  const onRequestClose = () => {
+    setDeletingBrand(undefined);
+  };
 
   return (
     <Container>
-      <h1>Marcas</h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h1>Marcas</h1>
+        <Link to="/marcas/nova">
+          <Button>Adicionar Marca</Button>
+        </Link>
+      </div>
       <Separator />
       <Table
         data={brands}
@@ -27,11 +50,19 @@ const BrandsScreen = () => {
           {
             path: "",
             label: "Ações",
-            render: () => (
+            render: ({ rowData }) => (
               <div style={{ display: "flex" }}>
-                <Button size="sm">Editar</Button>
+                <Link to={`/marcas/${rowData.id}`}>
+                  <Button size="sm">Editar</Button>
+                </Link>
                 <Separator size="sm" />
-                <Button intent="danger" size="sm">
+                <Button
+                  intent="danger"
+                  size="sm"
+                  onClick={() => {
+                    setDeletingBrand(rowData);
+                  }}
+                >
                   Excluir
                 </Button>
               </div>
@@ -39,6 +70,23 @@ const BrandsScreen = () => {
           },
         ]}
       />
+      <Modal
+        visible={!!deletingBrand}
+        onRequestClose={() => {
+          onRequestClose();
+        }}
+      >
+        {deletingBrand ? (
+          <DeleteConfirmationModal
+            brand={deletingBrand}
+            onCancel={() => onRequestClose()}
+            onSuccess={() => {
+              getBrands();
+              onRequestClose();
+            }}
+          />
+        ) : null}
+      </Modal>
     </Container>
   );
 };

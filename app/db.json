@@ -5,20 +5,12 @@
       "id": 1
     },
     {
-      "name": "Audi",
-      "id": 2
-    },
-    {
       "name": "Porsche",
       "id": 3
     },
     {
-      "name": "Ferrari",
+      "name": "Volkswagen",
       "id": 4
-    },
-    {
-      "name": "Tesla",
-      "id": 5
     }
   ],
   "cars": []

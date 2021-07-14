@@ -1,7 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Input = ({ id, value, onChange, placeholder, type, disabled }) => {
+const Input = ({
+  id,
+  value,
+  onChange,
+  placeholder,
+  type,
+  disabled,
+  required,
+}) => {
   return (
     <input
       id={id}
@@ -10,6 +18,7 @@ const Input = ({ id, value, onChange, placeholder, type, disabled }) => {
       placeholder={placeholder}
       type={type}
       disabled={disabled}
+      required={required}
     />
   );
 };
@@ -33,6 +42,7 @@ Input.propTypes = {
     "black",
   ]),
   disabled: PropTypes.bool,
+  required: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -40,4 +50,5 @@ Input.defaultProps = {
   placeholder: undefined,
   type: "text",
   disabled: false,
+  required: false,
 };
