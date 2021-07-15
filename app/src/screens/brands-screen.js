@@ -6,16 +6,15 @@ import Container from "../components/container";
 import Modal from "../components/modal";
 import { Link } from "react-router-dom";
 import DeleteConfirmationModal from "../components/delete-confirmation-modal";
+import getBrandsService from "../services/get-brands-service";
 
 const BrandsScreen = () => {
   const [brands, setBrands] = React.useState([]);
   const [deletingBrand, setDeletingBrand] = React.useState();
 
   const getBrands = () => {
-    fetch("http://localhost:8000/brands").then((result) => {
-      result.json().then((data) => {
-        setBrands(data);
-      });
+    getBrandsService().then((data) => {
+      setBrands(data);
     });
   };
 

@@ -1,3 +1,4 @@
+import deleteBrandService from "../services/delete-brand-service";
 import Button from "./button";
 import Separator from "./separator";
 import { useToast } from "./toast";
@@ -5,17 +6,6 @@ import { useToast } from "./toast";
 const DeleteConfirmationModal = ({ brand, onCancel, onSuccess }) => {
   const { notify } = useToast();
 
-  const deleteBrand = () => {
-    fetch(`http://localhost:8000/brands/${brand.id}`, {
-      method: "DELETE",
-    }).then(() => {
-      notify({
-        intent: "success",
-        message: `Marca ${brand.name} excluida com sucesso!`,
-      });
-      onSuccess();
-    });
-  };
   return (
     <>
       <h3>{brand.name}</h3>
@@ -29,7 +19,13 @@ const DeleteConfirmationModal = ({ brand, onCancel, onSuccess }) => {
         <Button
           intent="danger"
           onClick={() => {
-            deleteBrand();
+            deleteBrandService({ id: brand.id }).then(() => {
+              notify({
+                intent: "success",
+                message: `Marca ${brand.name} excluida com sucesso!`,
+              });
+              onSuccess();
+            });
           }}
         >
           Excluir

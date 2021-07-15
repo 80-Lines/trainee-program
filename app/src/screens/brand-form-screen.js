@@ -5,6 +5,8 @@ import Input from "../components/input";
 import Button from "../components/button";
 import { useToast } from "../components/toast";
 import { useHistory, useParams } from "react-router-dom";
+import saveBrandService from "../services/save-brand-service";
+import getBrandByIdService from "../services/get-brand-by-id-service";
 
 const BrandFormScreen = () => {
   const [brandId, setBrandId] = React.useState();
@@ -15,21 +17,11 @@ const BrandFormScreen = () => {
   const { id } = useParams();
 
   const saveBrand = () => {
-    const url = id
-      ? `http://localhost:8000/brands/${id}`
-      : "http://localhost:8000/brands";
-
-    const method = id ? "PUT" : "POST";
-
     const message = id
       ? `Marca ${brandName} editada com sucesso!`
       : `Marca ${brandName} adicionada com sucesso!`;
 
-    fetch(url, {
-      headers: { "Content-Type": "application/json" },
-      method,
-      body: JSON.stringify({ name: brandName }),
-    }).then(() => {
+    saveBrandService({ id, name: brandName }).then(() => {
       notify({
         intent: "success",
         message,
@@ -41,11 +33,9 @@ const BrandFormScreen = () => {
 
   React.useEffect(() => {
     if (id) {
-      fetch(`http://localhost:8000/brands/${id}`).then((result) => {
-        result.json().then((data) => {
-          setBrandId(data.id);
-          setBrandName(data.name);
-        });
+      getBrandByIdService({ id }).then((data) => {
+        setBrandId(data.id);
+        setBrandName(data.name);
       });
     }
   }, [id]);
