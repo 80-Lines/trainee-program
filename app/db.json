@@ -5,17 +5,20 @@
       "id": 4
     },
     {
-      "name": "Testando test",
+      "name": "Toyota",
       "id": 5
-    },
-    {
-      "name": "Test",
-      "id": 6
-    },
-    {
-      "name": "teste com useForm",
-      "id": 7
     }
   ],
-  "cars": []
+  "cars": [
+    {
+      "id": 1,
+      "name": "Gol",
+      "brandId": 4
+    },
+    {
+      "id": 2,
+      "name": "Corolla",
+      "brandId": 5
+    }
+  ]
 }

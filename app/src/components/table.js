@@ -1,5 +1,6 @@
-import React from "react";
+import { get } from "lodash";
 import PropTypes from "prop-types";
+import React from "react";
 
 const Table = ({ data, columns, rowKey }) => {
   return (
@@ -21,7 +22,7 @@ const Table = ({ data, columns, rowKey }) => {
                 </td>
               ) : (
                 <td key={column.path} style={{ padding: 10 }}>
-                  {rowData[column.path]}
+                  {get(rowData, column.path)}
                 </td>
               )
             )}
